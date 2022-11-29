@@ -23,7 +23,7 @@ profile.addEventListener("click", function () {
       );
     }
   }
-  open("profile.html", "_self");
+  open("profile1.html", "_self");
 });
 
 // For Display Header Form
@@ -74,12 +74,13 @@ if (!data) {
       copyJobs[i].hours,
       copyJobs[i].time,
       copyJobs[i].description,
-      copyJobs[i].id
+      copyJobs[i].id,
+      copyJobs[i].name
     );
   }
 }
 
-function createJobe(country, feild, hours, time, description, id) {
+function createJobe(country, feild, hours, time, description, id, name) {
   // Create Main Elements
   let divJob = document.createElement("div");
   divJob.className = "job";
@@ -93,6 +94,8 @@ function createJobe(country, feild, hours, time, description, id) {
   spanAvatar.className = "avatar";
   let spanJobHours = document.createElement("span");
   spanJobHours.className = "job-hours";
+  let JobDescription = document.createElement("p");
+  JobDescription.className = "job-descrption";
 
   let p = document.createElement("p");
   let pCompanyName = document.createElement("p");
@@ -108,16 +111,19 @@ function createJobe(country, feild, hours, time, description, id) {
   // Append Elements
   divContainer.appendChild(divJob);
   divJob.appendChild(spanAvatar);
-  spanAvatar.append(document.createTextNode("C"));
+  spanAvatar.append(document.createTextNode(name[0].toUpperCase()));
   divJob.appendChild(divJobContent);
   divJob.appendChild(divRemotly);
 
   divJobContent.appendChild(pCompanyName);
-  pCompanyName.append(document.createTextNode(country));
+  pCompanyName.append(document.createTextNode(name));
   divJobContent.appendChild(h2);
   h2.append(document.createTextNode(feild));
   divJobContent.appendChild(spanJobHours);
-  spanJobHours.append(document.createTextNode(`${hours} H`));
+  spanJobHours.append(document.createTextNode(`${hours}Hours / ${country}`));
+
+  divJobContent.appendChild(JobDescription);
+  JobDescription.append(document.createTextNode(description));
 
   divRemotly.appendChild(p);
   p.append(document.createTextNode(time));
@@ -151,8 +157,19 @@ divJobs.addEventListener("click", (e) => {
   }
 
   if (e.target.classList.contains("heading")) {
-    // console.log(e.target.getAttribute("special"));
-    showApplicants(e.target.getAttribute("special"));
+    for (let k = 0; k < copyAccounts.length; k++) {
+      if (copyAccounts[k].register == true) {
+        if (copyAccounts[k].type == "personal") {
+          divJobs.removeEventListener("click", showApplicants);
+        } else if (copyAccounts[k].type == "company") {
+          if (copyAccounts[k].name == e.target.previousSibling.innerHTML) {
+            showApplicants(e.target.getAttribute("special"));
+          } else {
+            divJobs.removeEventListener("click", showApplicants);
+          }
+        }
+      }
+    }
   }
 });
 
@@ -185,6 +202,7 @@ function showApplicants(param) {
         let h3 = document.createElement("h3");
         h3.classList = "show-profile";
         h3.setAttribute("whoApply", copyApply[i].whoApply);
+        h3.setAttribute("id", copyApply[i].id);
         h3.append(copyApply[i].username);
         let rejectAccept = document.createElement("div");
         rejectAccept.classList = "reject-accept";
@@ -233,14 +251,14 @@ function showApplicants(param) {
 
   dialog.addEventListener("click", function (e) {
     if (e.target.classList.contains("show-profile")) {
-      showProfile(e.target.getAttribute("whoApply"));
+      showProfile(e.target.getAttribute("id"));
     }
 
     if (e.target.classList.contains("reject")) {
       let rejected = e.target.getAttribute("id");
       for (let j = 0; j < copyApply.length; j++) {
         if (copyApply[j].id == rejected) {
-          console.log("Found");
+          // console.log("Found");
           copyApply = copyApply.filter((apply) => apply.id != rejected);
           window.localStorage.setItem("apply", JSON.stringify(copyApply));
           location.reload();
@@ -251,9 +269,9 @@ function showApplicants(param) {
 }
 
 function showProfile(param) {
-  console.log(param);
-  for (let i = 0; i < copyAccounts.length; i++) {
-    if (param == copyAccounts[i].id) {
+  // console.log(param);
+  for (let i = 0; i < copyApply.length; i++) {
+    if (param == copyApply[i].id) {
       window.localStorage.setItem("special", param);
     }
   }
@@ -296,7 +314,8 @@ searchBtn.addEventListener("click", (e) => {
           copyJobs[i].hours,
           copyJobs[i].time,
           copyJobs[i].description,
-          copyJobs[i].id
+          copyJobs[i].id,
+          copyJobs[i].name
         );
       }
     }
@@ -313,7 +332,8 @@ searchBtn.addEventListener("click", (e) => {
           copyJobs[i].hours,
           copyJobs[i].time,
           copyJobs[i].description,
-          copyJobs[i].id
+          copyJobs[i].id,
+          copyJobs[i].name
         );
       }
     }
@@ -327,14 +347,15 @@ moreEight.addEventListener("click", function () {
   divContainer.innerHTML = "";
   for (let i = 0; i < copyJobs.length; i++) {
     if (copyJobs[i].hours > 8) {
-      console.log(copyJobs[i].hours);
+      // console.log(copyJobs[i].hours);
       createJobe(
         copyJobs[i].country,
         copyJobs[i].feild,
         copyJobs[i].hours,
         copyJobs[i].time,
         copyJobs[i].description,
-        copyJobs[i].id
+        copyJobs[i].id,
+        copyJobs[i].name
       );
     }
   }
@@ -346,14 +367,15 @@ eight.addEventListener("click", function () {
   divContainer.innerHTML = "";
   for (let i = 0; i < copyJobs.length; i++) {
     if (copyJobs[i].hours == 8) {
-      console.log(copyJobs[i].hours);
+      // console.log(copyJobs[i].hours);
       createJobe(
         copyJobs[i].country,
         copyJobs[i].feild,
         copyJobs[i].hours,
         copyJobs[i].time,
         copyJobs[i].description,
-        copyJobs[i].id
+        copyJobs[i].id,
+        copyJobs[i].name
       );
     }
   }
@@ -365,14 +387,15 @@ seven.addEventListener("click", function () {
   divContainer.innerHTML = "";
   for (let i = 0; i < copyJobs.length; i++) {
     if (copyJobs[i].hours == 7) {
-      console.log(copyJobs[i].hours);
+      // console.log(copyJobs[i].hours);
       createJobe(
         copyJobs[i].country,
         copyJobs[i].feild,
         copyJobs[i].hours,
         copyJobs[i].time,
         copyJobs[i].description,
-        copyJobs[i].id
+        copyJobs[i].id,
+        copyJobs[i].name
       );
     }
   }
@@ -384,14 +407,15 @@ six.addEventListener("click", function () {
   divContainer.innerHTML = "";
   for (let i = 0; i < copyJobs.length; i++) {
     if (copyJobs[i].hours == 6) {
-      console.log(copyJobs[i].hours);
+      // console.log(copyJobs[i].hours);
       createJobe(
         copyJobs[i].country,
         copyJobs[i].feild,
         copyJobs[i].hours,
         copyJobs[i].time,
         copyJobs[i].description,
-        copyJobs[i].id
+        copyJobs[i].id,
+        copyJobs[i].name
       );
     }
   }
@@ -403,14 +427,15 @@ lessSix.addEventListener("click", function () {
   divContainer.innerHTML = "";
   for (let i = 0; i < copyJobs.length; i++) {
     if (copyJobs[i].hours < 6) {
-      console.log(copyJobs[i].hours);
+      // console.log(copyJobs[i].hours);
       createJobe(
         copyJobs[i].country,
         copyJobs[i].feild,
         copyJobs[i].hours,
         copyJobs[i].time,
         copyJobs[i].description,
-        copyJobs[i].id
+        copyJobs[i].id,
+        copyJobs[i].name
       );
     }
   }

@@ -85,7 +85,20 @@ document.forms[0].onsubmit = function (e) {
       });
 
     // Add Job To Local Storage
-    addJobToArray(select.value, hours.value, country.value, description.value);
+    let companyName;
+    let copyAccounts = JSON.parse(localStorage.getItem("account"));
+    for (let i = 0; i < copyAccounts.length; i++) {
+      if (copyAccounts[i].register == true) {
+        companyName = copyAccounts[i].name;
+      }
+    }
+    addJobToArray(
+      select.value,
+      hours.value,
+      country.value,
+      description.value,
+      companyName
+    );
   }
 
   // Hide Errors From Fooooorm
@@ -99,7 +112,7 @@ document.forms[0].onsubmit = function (e) {
   }
 };
 
-function addJobToArray(feild, hours, country, description) {
+function addJobToArray(feild, hours, country, description, companyName) {
   // Job Data
   const job = {
     id: new Date().getTime(),
@@ -108,6 +121,7 @@ function addJobToArray(feild, hours, country, description) {
     hours: hours,
     country: country,
     description: description,
+    name: companyName,
   };
   console.log("Job Added");
 

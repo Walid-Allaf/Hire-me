@@ -19,6 +19,16 @@ let copyAccounts = JSON.parse(localStorage.getItem("account"));
 cancel.addEventListener("click", function () {
   window.history.back();
 });
+let codeCV = "Walid";
+cv.addEventListener("change", function () {
+  const reader = new FileReader();
+  reader.readAsDataURL(this.files[0]);
+
+  reader.addEventListener("load", () => {
+    codeCV = reader.result;
+  });
+  console.log(cv.value);
+});
 
 apply.addEventListener("click", function (e) {
   let usernameValid = false,
@@ -104,7 +114,7 @@ apply.addEventListener("click", function (e) {
       username.value,
       phoneNumber.value,
       mail.value,
-      cv.value
+      codeCV
     );
   }
   // Hide Errors From Fooooorm

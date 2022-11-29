@@ -45,34 +45,24 @@
         window.history.back();
       });
 
-      let copyApply = JSON.parse(localStorage.getItem("apply"));
+      let copyAccount = JSON.parse(localStorage.getItem("account"));
       let special = JSON.parse(localStorage.getItem("special"));
 
-      for (let i = 0; i < copyApply.length; i++) {
-        if (copyApply[i].id == special) {
-          // if (copyApply[i].whoApply == special) {
+      for (let i = 0; i < copyAccount.length; i++) {
+        if (copyAccount[i].id == special) {
           let avatar = document.querySelector(".avatar");
-          avatar.innerHTML = copyApply[i].username[0].toUpperCase();
+          avatar.innerHTML = copyAccount[i].name[0].toUpperCase();
 
           let name = document.querySelector(".name");
-          name.innerHTML = copyApply[i].username;
+          name.innerHTML = copyAccount[i].name;
 
           let field = document.querySelector(".field");
-          field.innerHTML = copyApply[i].phoneNumber;
+          field.innerHTML = copyAccount[i].about;
 
           let mail = document.querySelector(".mail");
-          mail.innerHTML = copyApply[i].mail;
-
-          document.addEventListener("DOMContentLoaded", () => {
-            if (copyApply[i].cv) {
-              document
-                .querySelector(".cv")
-                .setAttribute("src", copyApply[i].cv);
-            }
-          });
+          mail.innerHTML = copyAccount[i].mail;
         }
       }
-      // }
     </script>
     <script
       src="https://kit.fontawesome.com/247e3a06c3.js"
