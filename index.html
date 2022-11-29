@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/logo-icon.png"
+    />
+    <title>Hire me (Home)</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <img src="images/logo.png" alt="logo" />
+        <button class="btn">Get Started</button>
+      </div>
+    </header>
+    <section class="landing">
+      <div class="container">
+        <div>
+          <h1>
+            We Help To Find<br />The Connection Between Companies and Developers
+          </h1>
+          <p>Our services will help you land your dream job</p>
+          <button class="btn">Get Started</button>
+        </div>
+        <div class="hero">
+          <img src="images/hero.webp" alt="hero-image" />
+        </div>
+      </div>
+    </section>
+    <section class="talent">
+      <div class="container">
+        <h2>We cover all areas of development!</h2>
+        <div>
+          <p>Front End Development</p>
+          <p>Back End Development</p>
+          <p>Flutter Developer</p>
+          <p>IOS Developer</p>
+          <p>Software Developer</p>
+          <p>UI \ UX Designer</p>
+        </div>
+      </div>
+    </section>
+    <section class="user">
+      <div class="container">
+        <div class="title">
+          <h2>Are you Developer?</h2>
+          <p>Find your job with 3 easy steps.</p>
+        </div>
+        <div class="user-steps">
+          <div class="step">
+            <div>
+              <h3>Register an account</h3>
+              <p>Fill the signup form and confirm your data then login</p>
+            </div>
+            <img src="images/choose.webp" alt="register" />
+          </div>
+          <div class="step">
+            <div>
+              <h3>Find your job</h3>
+              <p>Use seaech button and filter to find your job easier</p>
+            </div>
+            <img src="images/search.webp" alt="search" />
+          </div>
+          <div class="step">
+            <div>
+              <h3>Apply for job</h3>
+              <p>Fill the apply form and congratulations you have a job</p>
+            </div>
+            <img src="images/apply.webp" alt="apply" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="company">
+      <div class="container">
+        <div class="title">
+          <h2>Have you Company?</h2>
+          <p>Post your job with 3 easy steps.</p>
+        </div>
+        <div class="company-steps">
+          <div class="step">
+            <div>
+              <h3>Register an account</h3>
+              <p>Fill the signup form and confirm your data then login</p>
+            </div>
+            <img src="images/register.webp" alt="register" />
+          </div>
+          <div class="step">
+            <div>
+              <h3>Post a job</h3>
+              <p>Custom and post a job with wide options</p>
+            </div>
+            <img src="images/post.webp" alt="post" />
+          </div>
+          <div class="step">
+            <div>
+              <h3>Choose the developer</h3>
+              <p>
+                Eplore the developers profiles and congratulations you have a
+                developer
+              </p>
+            </div>
+            <img src="images/hands.webp" alt="hands" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <p>Made with ❤️ & ☕️ by Mohammad Walid Allaf<br />November 28</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("btn")) {
+          open("signup.html", "_self");
+        }
+      });
+    </script>
+  </body>
+</html>

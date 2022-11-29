@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/logo-icon.png"
+    />
+    <title>Apply</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/detailes.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="box detailes">
+        <h2>Please provide us with some information</h2>
+        <p>Write your full detailes in order to continue:</p>
+        <form action="">
+          <div>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" />
+            <p class="username-error"></p>
+          </div>
+          <div>
+            <label for="number">Phone number</label>
+            <input type="tel" name="phoneNumber" id="number" />
+            <p class="number-error"></p>
+          </div>
+          <div>
+            <label for="mail">Email</label>
+            <input type="mail" name="mail" id="mail" />
+            <p class="mail-error"></p>
+          </div>
+          <div>
+            <label for="cv" class="custom">
+              <input type="file" name="cv" id="cv" />
+              Upload your CV
+              <i class="fas fa-cloud-upload"></i>
+            </label>
+            <p class="cv-error"></p>
+          </div>
+        </form>
+        <div class="buttons">
+          <button class="cancel btn">Cancel</button>
+          <button class="continue btn">Apply</button>
+        </div>
+      </div>
+    </div>
+    <!-- Popup -->
+    <div class="popup-wrap">
+      <div class="popup-box">
+        <i class="far fa-check-circle"></i>
+        <h2>You've applied to job successfully</h2>
+        <h3>
+          We've received your request and will respond soon!<br />Press Ok to
+          see the jobs page
+        </h3>
+        <a class="btn popup-close" href="#">OK</a>
+      </div>
+    </div>
+
+    <script src="js/apply.js"></script>
+    <script
+      src="https://kit.fontawesome.com/247e3a06c3.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

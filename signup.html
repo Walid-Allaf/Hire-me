@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/logo-icon.png"
+    />
+    <title>Sign up</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/carousel.css" />
+    <link rel="stylesheet" href="css/detailes.css" />
+    <link rel="stylesheet" href="css/select.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="" /></a>
+        </div>
+      </div>
+    </header>
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <!-- Step 1 Select Type Of Account -->
+        <div class="container carousel__photo initial">
+          <div class="box select">
+            <span>Step 1 of 3</span>
+            <h2>What accuont would you like to create?</h2>
+            <p>
+              Choose what accuont would you like to create in order to continue:
+            </p>
+            <form action="">
+              <div class="select1">
+                <input type="radio" name="a" id="company" checked />
+                <label for="company">Company Account</label>
+                <p>
+                  Create your company's account and use it to run your business
+                  in Vacance
+                </p>
+              </div>
+              <div class="select2">
+                <input type="radio" name="a" id="personal" />
+                <label for="personal">Personal Account</label>
+                <p>
+                  Create your personal account and use it to get your first job
+                  in Vacance
+                </p>
+              </div>
+            </form>
+            <div class="buttons">
+              <button class="cancel btn">Cancel</button>
+              <button class="continue btn next">Continue</button>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 25px">
+            <p>
+              Already have an account? <a id="have-account" href="#">Login</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 For Detailes -->
+        <div class="container carousel__photo company">
+          <div class="box detailes">
+            <span>Step 2 of 3</span>
+            <h2>Please provide us with some information</h2>
+            <p>Write your full company information in order to continue:</p>
+            <form>
+              <div>
+                <label for="name">Company name</label>
+                <input type="text" name="name" id="name" />
+                <p class="name-error"></p>
+              </div>
+              <div>
+                <label for="location">Company location</label>
+                <input type="text" name="location" id="location" />
+                <p class="location-error"></p>
+              </div>
+              <div>
+                <label for="mail">Company mail</label>
+                <input type="mail" name="mail" id="mail" />
+                <p class="mail-error"></p>
+              </div>
+              <div>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" />
+                <p class="password-error"></p>
+              </div>
+              <div>
+                <label for="about">About company</label>
+                <textarea name="about" id="about"></textarea>
+                <p class="about-error"></p>
+              </div>
+            </form>
+            <div class="buttons">
+              <button class="cancel btn">Go back</button>
+              <button type="submit" class="continue btn next1">Continue</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 Vertify email -->
+        <div class="container carousel__photo">
+          <div class="box detailes">
+            <span>Step 3 of 3</span>
+            <h2>Confirm your account!</h2>
+            <!-- <img src="images/images.png" alt="gmail" /> -->
+            <i class="far fa-check-circle"></i>
+            <p>Your account added successfully and this is your data:</p>
+            <div class="info">
+              <div class="name">
+                <p>Name:</p>
+                <span></span>
+              </div>
+              <div class="mail">
+                <p>Mail:</p>
+                <span></span>
+              </div>
+              <div class="location">
+                <p>Location:</p>
+                <span></span>
+              </div>
+              <div class="field">
+                <p>Field:</p>
+                <span></span>
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- <button class="cancel btn">Go back</button> -->
+              <button class="continue btn next2">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Popup -->
+    <div class="popup-wrap">
+      <div class="popup-box">
+        <h2>Login</h2>
+        <form action="">
+          <div>
+            <label for="user-or-company">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="user-or-company"
+              placeholder="Username or Compny Name"
+            />
+          </div>
+          <div>
+            <label for="">Password</label>
+            <input
+              type="password"
+              name="pass"
+              id="pass"
+              placeholder="Enter your password"
+            />
+          </div>
+          <p class="login-error">
+            There is an error in name or password that you've entered
+          </p>
+        </form>
+        <button class="btn cancel">Cancel</button>
+        <button class="btn login">Login</button>
+      </div>
+    </div>
+
+    <script src="js/login.js"></script>
+    <script src="js/main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/247e3a06c3.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

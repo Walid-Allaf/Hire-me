@@ -1,0 +1,141 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/* Variables */
+:root {
+  --background-color: #f5f7f9;
+  --main-color: #1259ef;
+  --hover-background: #03c;
+  --before-validation-background: #b3dcff;
+  --text-color: #1e2127;
+  --border-color: #bbc2c7;
+  --white-color: #fff;
+}
+
+.detailes form {
+  text-align: start;
+}
+
+.detailes form input,
+.detailes form textarea,
+.detailes form select {
+  display: block;
+  width: 100%;
+  min-height: 36px;
+  padding: 8px 25px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  outline: none;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.detailes form input:focus,
+.detailes form textarea:focus,
+.detailes form select:focus,
+.box .buttons input[type="text"]#ver:focus {
+  -webkit-box-shadow: inset 0 0 0 2px #80c5ff;
+  box-shadow: inset 0 0 0 2px #80c5ff;
+  outline: none;
+}
+
+.detailes form textarea {
+  height: 70px;
+  resize: none;
+}
+
+/* Two Buttons */
+.box>div {
+  margin-top: 20px;
+}
+
+.box .buttons input[type="text"]#ver {
+  margin-right: 10px;
+  min-height: 36px;
+  width: 110px;
+  border: none;
+  outline: none;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 25px;
+
+}
+
+.buttons input[type="submit"] {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #fff), color-stop(50%, var(--main-color)));
+  background: -o-linear-gradient(left, #fff 50%, var(--main-color) 50%);
+  background: linear-gradient(to right, #fff 50%, var(--main-color) 50%);
+  color: #fff;
+  background-size: 200% 100%;
+  background-position: right bottom;
+  font-weight: bold;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+}
+
+.buttons input[type="submit"]:hover {
+  outline: 1px solid var(--main-color);
+  background-position: left bottom;
+  color: var(--main-color);
+}
+
+.detailes>img {
+  width: 200px;
+  margin-top: 25px;
+}
+
+/* Upload CV Feild */
+
+
+form input[type="file"] {
+  display: none;
+}
+
+form .custom {
+  border: 1px solid var(--border-color);
+  display: inline-block;
+  padding: 8px 25px;
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 4px;
+}
+
+form .custom i {
+  margin-left: 10px;
+}
+
+.box form label.custom {
+  color: #777;
+  display: block;
+  margin: 36px 0 5px;
+  font-size: 16px;
+}
+
+form p {
+  display: none;
+  color: red;
+  font-size: 14px;
+
+}

@@ -1,0 +1,93 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+header .container {
+  height: 80px;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+}
+
+header .container i {
+  padding: 12px 25px 12px 0;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+header .container p {
+  font-size: 32px;
+}
+
+/* Start Section */
+section .container {
+  text-align: center;
+}
+
+section .container .avatar {
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
+  color: var(--main-color);
+  border-radius: 50%;
+  border: 2px solid var(--main-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: bold;
+  margin: 20px auto;
+}
+
+section .container .content {
+  padding: 15px 0;
+  color: var(--text-color);
+  font-size: 22px;
+}
+
+section .container .content .name {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+section .container .content .field {
+  color: #777;
+  margin: 22px 0;
+}
+
+section .container .content .mail {
+  color: #777;
+}
+
+section .container .content i {
+  display: block;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 767px) {
+
+  section .container .avatar {
+    width: 200px;
+    height: 200px;
+    font-size: 70px;
+  }
+
+  section .container .content {
+    padding: 40px 0;
+    font-size: 28px;
+  }
+
+  section .container .content .name {
+    font-size: 42px;
+  }
+}

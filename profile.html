@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/logo-icon.png"
+    />
+    <title>Profile</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <i class="fas fa-arrow-left"></i>
+        <p>Profile</p>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <div class="avatar"></div>
+        <div class="content">
+          <div class="name"></div>
+          <div class="field"></div>
+          <div class="mail"></div>
+        </div>
+      </div>
+    </section>
+    <script>
+      let back = document.querySelector(".fa-arrow-left");
+      back.addEventListener("click", function () {
+        window.history.back();
+      });
+
+      let copyAccounts = JSON.parse(localStorage.getItem("account"));
+      let special = JSON.parse(localStorage.getItem("special"));
+
+      for (let i = 0; i < copyAccounts.length; i++) {
+        if (copyAccounts[i].id == special) {
+          let avatar = document.querySelector(".avatar");
+          avatar.innerHTML = copyAccounts[i].name[0].toUpperCase();
+
+          let name = document.querySelector(".name");
+          name.innerHTML = copyAccounts[i].name;
+
+          let field = document.querySelector(".field");
+          field.innerHTML = copyAccounts[i].about;
+
+          let mail = document.querySelector(".mail");
+          mail.innerHTML = copyAccounts[i].mail;
+        }
+      }
+    </script>
+    <script
+    src="https://kit.fontawesome.com/247e3a06c3.js"
+    crossorigin="anonymous"
+  ></script>
+  </body>
+</html>

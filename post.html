@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/logo-icon.png"
+    />
+    <title>Post</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/detailes.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="logo" /></a>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="box detailes">
+        <h2>Please provide us with some information</h2>
+        <p>Enter full job detailes in order to post:</p>
+        <form action="">
+          <div>
+            <label for="select">Job feild</label>
+            <select name="company" id="select">
+              <option value="Front End Developer">Front End Developer</option>
+              <option value="Back End Developer">Back End Developer</option>
+              <option value="UI / UX Designer">UI / UX Designer</option>
+              <option value="Flutter Developer">Flutter Developer</option>
+              <option value="IOS Developer">IOS Developer</option>
+              <option value="Software Developer">Software Developer</option>
+            </select>
+          </div>
+          <div>
+            <label for="hours">Working hours</label>
+            <input type="number" name="hours" id="hours" placeholder="Hours" />
+            <p class="hours-error"></p>
+          </div>
+          <div>
+            <label for="country">Country</label>
+            <input type="text" name="country" id="country" />
+            <p class="country-error"></p>
+          </div>
+          <div>
+            <label for="description">Job description</label>
+            <textarea name="description" id="description"></textarea>
+            <p class="description-error"></p>
+          </div>
+          <div class="buttons">
+            <button class="cancel btn">Cancel</button>
+            <input type="submit" class="continue btn" value="Post" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Popup -->
+    <div class="popup-wrap">
+      <div class="popup-box">
+        <i class="far fa-check-circle"></i>
+        <h2>Your job posted successfully</h2>
+        <h3>
+          You will see your job in jobs page.<br />Press Ok to see jobs page
+        </h3>
+        <a class="btn popup-close" href="#">OK</a>
+      </div>
+    </div>
+    <script src="js/post.js"></script>
+    <script
+      src="https://kit.fontawesome.com/247e3a06c3.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
