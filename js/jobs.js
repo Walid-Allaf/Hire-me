@@ -201,6 +201,7 @@ function showApplicants(param) {
         applicant.classList = "applicant";
         let h3 = document.createElement("h3");
         h3.classList = "show-profile";
+        h3.style.cursor = "pointer";
         h3.setAttribute("whoApply", copyApply[i].whoApply);
         h3.setAttribute("id", copyApply[i].id);
         h3.append(copyApply[i].username);
